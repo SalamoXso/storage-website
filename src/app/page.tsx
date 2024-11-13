@@ -1,12 +1,11 @@
 'use client'
 import "./styles/globals.css";
-
-import Image from "next/image"
-import Link from "next/link"
-import { useState } from "react"
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function Component() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
@@ -35,19 +34,19 @@ export default function Component() {
               </button>
             </div>
             <nav className="hidden md:flex space-x-10">
-              <Link href="/services.tsx" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Services
-              </Link>
-              <Link href="/pricing.tsx" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Pricing
-              </Link>
-              <Link href="/about.tsx" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                About
-              </Link>
-              <Link href="contact.tsx" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Contact
-              </Link>
-            </nav>
+  <Link href="/services" className="text-base font-medium text-gray-500 hover:text-gray-900">
+    Services
+  </Link>
+  <Link href="/pricing" className="text-base font-medium text-gray-500 hover:text-gray-900">
+    Pricing
+  </Link>
+  <Link href="/about" className="text-base font-medium text-gray-500 hover:text-gray-900">
+    About
+  </Link>
+  <Link href="/contact" className="text-base font-medium text-gray-500 hover:text-gray-900">
+    Contact
+  </Link>
+</nav>
             <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
               <Link href="#" className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-teal-600 hover:bg-teal-700">
                 Get Started
@@ -80,20 +79,20 @@ export default function Component() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <nav className="grid gap-y-8">
-                    <Link href="#" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      <span className="ml-3 text-base font-medium text-gray-900">Services</span>
-                    </Link>
-                    <Link href="#" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      <span className="ml-3 text-base font-medium text-gray-900">Pricing</span>
-                    </Link>
-                    <Link href="#" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      <span className="ml-3 text-base font-medium text-gray-900">About</span>
-                    </Link>
-                    <Link href="#" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      <span className="ml-3 text-base font-medium text-gray-900">Contact</span>
-                    </Link>
-                  </nav>
+                <nav className="grid gap-y-8">
+  <Link href="/services" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+    <span className="ml-3 text-base font-medium text-gray-900">Services</span>
+  </Link>
+  <Link href="/pricing" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+    <span className="ml-3 text-base font-medium text-gray-900">Pricing</span>
+  </Link>
+  <Link href="/about" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+    <span className="ml-3 text-base font-medium text-gray-900">About</span>
+  </Link>
+  <Link href="/contact" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+    <span className="ml-3 text-base font-medium text-gray-900">Contact</span>
+  </Link>
+</nav>
                 </div>
               </div>
               <div className="py-6 px-5 space-y-6">
