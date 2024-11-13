@@ -6,12 +6,12 @@
   "scripts": {
   "dev": "next dev --turbopack",
   "build": "next build",
-  "start": "next start",
+  "copy-static-assets": "cp -r .next/static .next/standalone/.next/static && cp -r public .next/standalone/public",
+  "start": "npm run build && npm run copy-static-assets && node .next/standalone/server.js",
   "lint": "next lint",
+  "export": "next export",
   "predeploy": "npm run build",
   "deploy": "gh-pages -d out"
- 
-
 }
 ,
   "dependencies": {

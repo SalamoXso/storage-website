@@ -1,10 +1,8 @@
-// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  basePath: '/storage-website',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/storage-website/' : '',
-  
+  basePath: '/storage-website',  // Keeps paths prefixed with your desired base path
+  assetPrefix: './',  // Corrects the asset prefix to be absolute within your base path
+  output: 'export',             // Export for static build
 };
 
 module.exports = nextConfig;
