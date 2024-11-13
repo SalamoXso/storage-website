@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: '/storage-website',  // Keeps paths prefixed with your desired base path
-  assetPrefix: './',  // Corrects the asset prefix to be absolute within your base path
-  output: 'export',             // Export for static build
+  output: 'export',
+  assetPrefix: process.env.ASSET_PREFIX,
+  basePath: process.env.BASE_PATH,
 };
 
 module.exports = nextConfig;
