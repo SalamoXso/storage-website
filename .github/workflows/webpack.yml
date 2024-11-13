@@ -10,10 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x] # Choose a single version for simplicity, or adjust as needed
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -33,9 +29,6 @@ jobs:
 
       - name: Build with Next.js
         run: npm run build
-
-      - name: Export App
-        run: npm run export
 
       - name: Create .nojekyll File
         run: touch ./out/.nojekyll
