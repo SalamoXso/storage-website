@@ -1,4 +1,4 @@
-name: NodeJS with Webpack
+name: NodeJS with Next.js
 
 on:
   push:
@@ -25,9 +25,27 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Set Environment Variables
+        env:
+          ASSET_PREFIX: /<your-repo-name>
+          BASE_PATH: /<your-repo-name>
+        run: |
+          echo "" > .env.local
+          echo ASSET_PREFIX=$ASSET_PREFIX >> .env.local
+          echo BASE_PATH=$BASE_PATH >> .env.local
+
       - name: Build with Next.js (using Next's build command)
         run: npm run build
 
-    # Remove this step if you do not want to export the app statically
-    # - name: Export app (if static export is required)
-    #   run: npm run export
+      - name: Export app (if static export is required)
+        run: npm run export
+
+      - name: Create .nojekyll
+        run: touch ./out/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: gh-pages/deploy@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          deploy_branch: gh-pages
+          build_dir: ./out

@@ -2,18 +2,19 @@
   "name": "storage-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://SalamoXso.github.io/storage-website",
-  "scripts": {
+  
+"scripts": {
   "dev": "next dev --turbopack",
   "build": "next build",
   "copy-static-assets": "cp -r .next/static .next/standalone/.next/static && cp -r public .next/standalone/public",
   "start": "npm run build && npm run copy-static-assets && node .next/standalone/server.js",
   "lint": "next lint",
   "export": "next export",
-  "predeploy": "npm run build",
+  "predeploy": "npm run build && npm run export",
   "deploy": "gh-pages -d out"
-}
-,
+},
+"homepage": "https://salamoxso.github.io/storage-website",
+
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "lucide-react": "^0.456.0",
