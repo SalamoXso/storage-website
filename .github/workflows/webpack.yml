@@ -12,10 +12,11 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x, 22.x]
+        node-version: [18.x] # Choose a single version for simplicity, or adjust as needed
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -23,29 +24,24 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Set Environment Variables
-        env:
-          ASSET_PREFIX: /<your-repo-name>
-          BASE_PATH: /<your-repo-name>
         run: |
-          echo "" > .env.local
-          echo ASSET_PREFIX=$ASSET_PREFIX >> .env.local
-          echo BASE_PATH=$BASE_PATH >> .env.local
+          echo "ASSET_PREFIX=/<your-repo-name>" >> .env.local
+          echo "BASE_PATH=/<your-repo-name>" >> .env.local
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm install
 
-      - name: Build with Next.js (using Next's build command)
+      - name: Build with Next.js
         run: npm run build
 
-      - name: Export app (if static export is required)
+      - name: Export App
         run: npm run export
 
-      - name: Create .nojekyll
+      - name: Create .nojekyll File
         run: touch ./out/.nojekyll
 
       - name: Deploy to GitHub Pages
-        uses: gh-pages/deploy@v1
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          deploy_branch: gh-pages
-          build_dir: ./out
+          publish_dir: ./out
