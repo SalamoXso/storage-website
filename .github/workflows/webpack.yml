@@ -28,6 +28,6 @@ jobs:
     - name: Build with Next.js (using Next's build command)
       run: npm run build
 
-    # Optional: Run additional steps if you want to export or deploy the app.
-    - name: Export app (if static export is required)
-      run: npm run export
+    # Remove this step if you do not want to export the app statically
+    # - name: Export app (if static export is required)
+    #   run: npm run export
