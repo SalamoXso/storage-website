@@ -21,8 +21,8 @@ jobs:
 
       - name: Set Environment Variables
         run: |
-          echo "ASSET_PREFIX=/<your-repo-name>" >> .env.local
-          echo "BASE_PATH=/<your-repo-name>" >> .env.local
+          echo "ASSET_PREFIX=/storage-website" >> .env.local
+          echo "BASE_PATH=/storage-website" >> .env.local
 
       - name: Install Dependencies
         run: npm install
