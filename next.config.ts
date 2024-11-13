@@ -1,7 +1,10 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Use 'export' to enable static export behavior
+  output: 'export',
+  basePath: '/storage-website', // Adjust to your repo name
+  assetPrefix: '/storage-website/', // Adjust to your repo name
 };
 
 export default nextConfig;
