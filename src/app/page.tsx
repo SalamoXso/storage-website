@@ -281,7 +281,7 @@ export default function Component() {
                 <div className="aspect-w-3 aspect-h-2">
                   <Image
                     className="object-cover shadow-lg rounded-lg"
-                    src="/placeholder.svg"
+                    src="/images.jpeg"
                     alt="Storage facility"
                     width={600}
                     height={400}
@@ -302,7 +302,7 @@ export default function Component() {
               <div className="bg-gray-50 rounded-lg p-6 space-y-6">
                 <p className="text-gray-500">"Storage Veendam has been a lifesaver for my growing business. The flexibility to adjust my storage space as needed is invaluable."</p>
                 <div className="flex items-center">
-                  <Image className="h-12 w-12 rounded-full" src="/placeholder.svg" alt="Customer" width={48} height={48} />
+                  <Image className="h-12 w-12 rounded-full" src="/client_man_basic-512.webp" alt="Customer" width={48} height={48} />
                   <div className="ml-4">
                     <h4 className="text-lg font-bold">John Doe</h4>
                     <p className="text-gray-500">Small Business Owner</p>
@@ -312,7 +312,7 @@ export default function Component() {
               <div className="bg-gray-50 rounded-lg p-6 space-y-6">
                 <p className="text-gray-500">"I love the 24/7 access and the security measures in place. It gives me peace of mind knowing my belongings are safe."</p>
                 <div className="flex items-center">
-                  <Image className="h-12 w-12 rounded-full" src="/placeholder.svg" alt="Customer" width={48} height={48} />
+                  <Image className="h-12 w-12 rounded-full" src="/client_man_basic-512.webp" alt="Customer" width={48} height={48} />
                   <div className="ml-4">
                     <h4 className="text-lg font-bold">Jane Smith</h4>
                     <p className="text-gray-500">Homeowner</p>
@@ -322,7 +322,7 @@ export default function Component() {
               <div className="bg-gray-50 rounded-lg p-6 space-y-6">
                 <p className="text-gray-500">"The staff at Storage Veendam are always helpful and professional. They made the whole process easy and stress-free."</p>
                 <div className="flex items-center">
-                  <Image className="h-12 w-12 rounded-full" src="/placeholder.svg" alt="Customer" width={48} height={48} />
+                  <Image className="h-12 w-12 rounded-full" src="/client_man_basic-512.webp" alt="Customer" width={48} height={48} />
                   <div className="ml-4">
                     <h4 className="text-lg font-bold">Mark Johnson</h4>
                     <p className="text-gray-500">Student</p>

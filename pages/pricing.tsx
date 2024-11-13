@@ -1,5 +1,5 @@
 'use client'
-import "./styles/globals.css";
+import "/src/app/styles/globals.css";
 import Link from "next/link"
 
 export default function PricingPage() {

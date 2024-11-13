@@ -1,9 +1,9 @@
 'use client'
-import "./styles/globals.css";
+import "/src/app/styles/globals.css";
 import Image from "next/image"
 import Link from "next/link"
 
-export default function AboutPage() {
+export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-white shadow-sm">
@@ -44,77 +44,98 @@ export default function AboutPage() {
       <main className="flex-grow">
         <div className="bg-teal-700">
           <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">About Us</h1>
+            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">Our Services</h1>
             <p className="mt-6 max-w-3xl text-xl text-teal-100">
-              Learn about our history, mission, and commitment to providing top-notch storage solutions in Veendam.
+              Discover our range of flexible storage solutions designed to meet your specific needs.
             </p>
           </div>
         </div>
 
         <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Story</h2>
-              <p className="mt-4 text-lg text-gray-500">
-                Founded in 2010, Storage Veendam has been serving the Veendam community with reliable and flexible storage solutions for over a decade. What started as a small family business has grown into a trusted name in the storage industry, known for our commitment to customer satisfaction and innovative storage solutions.
-              </p>
-              <p className="mt-4 text-lg text-gray-500">
-                Our journey has been marked by continuous improvement and adaptation to meet the evolving needs of our customers. From individuals looking for personal storage to businesses requiring scalable solutions, we've always strived to provide the perfect space for every need.
-              </p>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
+            <div className="space-y-5">
+              <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">Business Storage</h2>
+              <p className="text-lg text-gray-500">Perfect for ZZP and growing businesses. Our flexible space adapts to your needs.</p>
+              <ul className="mt-4 space-y-4">
+                <li className="flex items-center">
+                  <svg className="flex-shrink-0 h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="ml-3 text-base text-gray-500">Scalable units from 10m² to 100m²</span>
+                </li>
+                <li className="flex items-center">
+                  <svg className="flex-shrink-0 h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="ml-3 text-base text-gray-500">24/7 secure access</span>
+                </li>
+                <li className="flex items-center">
+                  <svg className="flex-shrink-0 h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="ml-3 text-base text-gray-500">Climate-controlled options available</span>
+                </li>
+              </ul>
+              <Link href="/contact" className="mt-8 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700">
+                Learn More
+              </Link>
             </div>
-            <div className="relative h-64 sm:h-72 md:h-96 lg:h-full">
-              <Image
-                src="/placeholder.svg"
-                alt="Storage Veendam Facility"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg shadow-lg"
-              />
+
+            <div className="space-y-5">
+              <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">Personal Storage</h2>
+              <p className="text-lg text-gray-500">Secure units for personal belongings. Various sizes available to suit your needs.</p>
+              <ul className="mt-4 space-y-4">
+                <li className="flex items-center">
+                  <svg className="flex-shrink-0 h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="ml-3 text-base text-gray-500">Units from 1m² to 20m²</span>
+                </li>
+                <li className="flex items-center">
+                  <svg className="flex-shrink-0 h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="ml-3 text-base text-gray-500">Flexible short and long-term contracts</span>
+                </li>
+                <li className="flex items-center">
+                  <svg className="flex-shrink-0 h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="ml-3 text-base text-gray-500">Easy access with drive-up units</span>
+                </li>
+              </ul>
+              <Link href="/contact" className="mt-8 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700">
+                Learn More
+              </Link>
             </div>
-          </div>
 
-          <div className="mt-16">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Mission</h2>
-            <p className="mt-4 text-lg text-gray-500">
-              At Storage Veendam, our mission is to provide secure, flexible, and accessible storage solutions that empower individuals and businesses to manage their space effectively. We are committed to delivering exceptional customer service, maintaining the highest standards of security, and continuously innovating to meet the diverse needs of our community.
-            </p>
-          </div>
-
-          <div className="mt-16">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Values</h2>
-            <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-                <div className="px-6 py-8">
-                  <h3 className="text-xl font-semibold text-gray-900">Customer-Centric</h3>
-                  <p className="mt-4 text-gray-500">
-                    We put our customers first, always striving to exceed their expectations and provide solutions tailored to their unique needs.
-                  </p>
-                </div>
-              </div>
-              <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-                <div className="px-6 py-8">
-                  <h3 className="text-xl font-semibold text-gray-900">Integrity</h3>
-                  <p className="mt-4 text-gray-500">
-                    We operate with honesty and transparency, building trust with our customers and within our community.
-                  </p>
-                </div>
-              </div>
-              <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-                <div className="px-6 py-8">
-                  <h3 className="text-xl font-semibold text-gray-900">Innovation</h3>
-                  <p className="mt-4 text-gray-500">
-                    We continuously seek new ways to improve our services and adapt to the changing needs of our customers.
-                  </p>
-                </div>
-              </div>
+            <div className="space-y-5">
+              <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">Administrative Storage</h2>
+              <p className="text-lg text-gray-500">Compact units ideal for document storage and small inventory.</p>
+              <ul className="mt-4 space-y-4">
+                <li className="flex items-center">
+                  <svg className="flex-shrink-0 h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="ml-3 text-base text-gray-500">Secure document storage solutions</span>
+                </li>
+                <li className="flex items-center">
+                  <svg className="flex-shrink-0 h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="ml-3 text-base text-gray-500">Climate-controlled environment</span>
+                </li>
+                <li className="flex items-center">
+                  <svg className="flex-shrink-0 h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="ml-3 text-base text-gray-500">Customizable shelving options</span>
+                </li>
+              </ul>
+              <Link href="/contact" className="mt-8 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700">
+                Learn More
+              </Link>
             </div>
-          </div>
-
-          <div className="mt-16">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Team</h2>
-            <p className="mt-4 text-lg text-gray-500">
-              Behind Storage Veendam is a dedicated team of professionals committed to providing you with the best storage experience possible. From our friendly customer service representatives to our skilled maintenance staff, every member of our team plays a crucial role in ensuring your satisfaction.
-            </p>
           </div>
         </div>
       </main>

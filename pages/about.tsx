@@ -1,42 +1,10 @@
-'use client'
-import "./styles/globals.css";
+"use client"
+
+import "/src/app/styles/globals.css";
+import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
 
-
-
-export default function FAQPage() {
-  const [openQuestion, setOpenQuestion] = useState(null)
-  const FaqComponent = () => {
-  const [openQuestion, setOpenQuestion] = useState<null | number>(null);
-
-  const faqs = [
-    {
-      question: "What sizes of storage units do you offer?",
-      answer: "We offer a variety of storage unit sizes to meet different needs. Our units range from small 1m² lockers suitable for document storage, up to large 100m² units perfect for business inventory or large household items. Popular sizes include 5m², 10m², and 20m² units."
-    },
-    {
-      question: "How secure are your storage facilities?",
-      answer: "Security is our top priority. Our facilities are equipped with 24/7 video surveillance, individual unit alarms, secure access control systems, and on-site staff during business hours. Each unit is individually locked, and only you have the key or access code."
-    },
-    {
-      question: "Can I access my storage unit at any time?",
-      answer: "Yes, we offer 24/7 access to your storage unit. You can visit your unit whenever you need, day or night, using your personal access code or key card."
-    },
-    {
-      question: "Do you offer climate-controlled units?",
-      answer: "Yes, we have climate-controlled units available. These units maintain a consistent temperature and humidity level, which is ideal for storing sensitive items such as electronics, wooden furniture, important documents, or artwork."
-    },
-    {
-      question: "What is your pricing structure?",
-      answer: "Our pricing is based on the size of the unit and the duration of storage. We offer flexible contracts with monthly rates starting from €49 for our smallest units. For detailed pricing, please check our pricing page or contact us for a personalized quote."
-    },
-    {
-      question: "Do I need insurance for my stored items?",
-      answer: "While we take every precaution to ensure the safety of your belongings, we recommend having insurance coverage for your stored items. We offer insurance options, or you can check if your homeowner's or renter's insurance policy covers items in storage."
-    }
-  ]
-
+export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-white shadow-sm">
@@ -77,43 +45,77 @@ export default function FAQPage() {
       <main className="flex-grow">
         <div className="bg-teal-700">
           <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">Frequently Asked Questions</h1>
+            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">About Us</h1>
             <p className="mt-6 max-w-3xl text-xl text-teal-100">
-              Find answers to common questions about our storage solutions and services.
+              Learn about our history, mission, and commitment to providing top-notch storage solutions in Veendam.
             </p>
           </div>
         </div>
 
         <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto divide-y-2 divide-gray-200">
-            {faqs.map((faq, index) => (
-              <div key={index} className="pt-6 pb-8">
-                <dt className="text-lg">
-                  
-                  <button
-                    onClick={() => setOpenQuestion(openQuestion === index ? null : index)}
-                    className="text-left w-full flex justify-between items-start text-gray-400"
-                  >
-                    <span className="font-medium text-gray-900">{faq.question}</span>
-                    <span className="ml-6 h-7 flex items-center">
-                      <svg
-                        className={`${openQuestion === index ? '-rotate-180' : 'rotate-0'} h-6 w-6 transform`}
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        aria-hidden="true"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </span>
-                  </button>
-                </dt>
-                <dd className={`mt-2 pr-12 ${openQuestion === index ? 'block' : 'hidden'}`}>
-                  <p className="text-base text-gray-500">{faq.answer}</p>
-                </dd>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Story</h2>
+              <p className="mt-4 text-lg text-gray-500">
+                Founded in 2010, Storage Veendam has been serving the Veendam community with reliable and flexible storage solutions for over a decade. What started as a small family business has grown into a trusted name in the storage industry, known for our commitment to customer satisfaction and innovative storage solutions.
+              </p>
+              <p className="mt-4 text-lg text-gray-500">
+                Our journey has been marked by continuous improvement and adaptation to meet the evolving needs of our customers. From individuals looking for personal storage to businesses requiring scalable solutions, we've always strived to provide the perfect space for every need.
+              </p>
+            </div>
+            <div className="relative h-64 sm:h-72 md:h-96 lg:h-full">
+              <Image
+                src="../image.jpeg"
+                alt="Storage Veendam Facility"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+
+          <div className="mt-16">
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Mission</h2>
+            <p className="mt-4 text-lg text-gray-500">
+              At Storage Veendam, our mission is to provide secure, flexible, and accessible storage solutions that empower individuals and businesses to manage their space effectively. We are committed to delivering exceptional customer service, maintaining the highest standards of security, and continuously innovating to meet the diverse needs of our community.
+            </p>
+          </div>
+
+          <div className="mt-16">
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Values</h2>
+            <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                <div className="px-6 py-8">
+                  <h3 className="text-xl font-semibold text-gray-900">Customer-Centric</h3>
+                  <p className="mt-4 text-gray-500">
+                    We put our customers first, always striving to exceed their expectations and provide solutions tailored to their unique needs.
+                  </p>
+                </div>
               </div>
-            ))}
+              <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                <div className="px-6 py-8">
+                  <h3 className="text-xl font-semibold text-gray-900">Integrity</h3>
+                  <p className="mt-4 text-gray-500">
+                    We operate with honesty and transparency, building trust with our customers and within our community.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                <div className="px-6 py-8">
+                  <h3 className="text-xl font-semibold text-gray-900">Innovation</h3>
+                  <p className="mt-4 text-gray-500">
+                    We continuously seek new ways to improve our services and adapt to the changing needs of our customers.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-16">
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Team</h2>
+            <p className="mt-4 text-lg text-gray-500">
+              Behind Storage Veendam is a dedicated team of professionals committed to providing you with the best storage experience possible. From our friendly customer service representatives to our skilled maintenance staff, every member of our team plays a crucial role in ensuring your satisfaction.
+            </p>
           </div>
         </div>
       </main>
@@ -240,4 +242,4 @@ export default function FAQPage() {
       </footer>
     </div>
   )
-}}
+}

@@ -1,28 +1,41 @@
 'use client'
-import "./styles/globals.css";
+import "/src/app/styles/globals.css";
 import Link from "next/link"
 import { useState } from "react"
 
-export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({ ...prevState, [name]: value }));
-  };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // Here you would typically send the form data to your server
-    console.log(formData);
-    alert("Thank you for your message. We'll get back to you soon!");
-    setFormData({ name: "", email: "", phone: "", message: "" });
-  };
+export default function FAQPage() {
+  const [openQuestion, setOpenQuestion] = useState(null)
+  const FaqComponent = () => {
+  const [openQuestion, setOpenQuestion] = useState<null | number>(null);
+
+  const faqs = [
+    {
+      question: "What sizes of storage units do you offer?",
+      answer: "We offer a variety of storage unit sizes to meet different needs. Our units range from small 1m² lockers suitable for document storage, up to large 100m² units perfect for business inventory or large household items. Popular sizes include 5m², 10m², and 20m² units."
+    },
+    {
+      question: "How secure are your storage facilities?",
+      answer: "Security is our top priority. Our facilities are equipped with 24/7 video surveillance, individual unit alarms, secure access control systems, and on-site staff during business hours. Each unit is individually locked, and only you have the key or access code."
+    },
+    {
+      question: "Can I access my storage unit at any time?",
+      answer: "Yes, we offer 24/7 access to your storage unit. You can visit your unit whenever you need, day or night, using your personal access code or key card."
+    },
+    {
+      question: "Do you offer climate-controlled units?",
+      answer: "Yes, we have climate-controlled units available. These units maintain a consistent temperature and humidity level, which is ideal for storing sensitive items such as electronics, wooden furniture, important documents, or artwork."
+    },
+    {
+      question: "What is your pricing structure?",
+      answer: "Our pricing is based on the size of the unit and the duration of storage. We offer flexible contracts with monthly rates starting from €49 for our smallest units. For detailed pricing, please check our pricing page or contact us for a personalized quote."
+    },
+    {
+      question: "Do I need insurance for my stored items?",
+      answer: "While we take every precaution to ensure the safety of your belongings, we recommend having insurance coverage for your stored items. We offer insurance options, or you can check if your homeowner's or renter's insurance policy covers items in storage."
+    }
+  ]
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -64,122 +77,43 @@ export default function ContactPage() {
       <main className="flex-grow">
         <div className="bg-teal-700">
           <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">Contact Us</h1>
+            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">Frequently Asked Questions</h1>
             <p className="mt-6 max-w-3xl text-xl text-teal-100">
-              Get in touch with us for any questions about our storage solutions or to schedule a visit.
+              Find answers to common questions about our storage solutions and services.
             </p>
           </div>
         </div>
 
         <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">Get in Touch</h2>
-              <p className="mt-4 text-lg text-gray-500">
-                We're here to help and answer any question you might have. We look forward to hearing from you.
-              </p>
-              <dl className="mt-8 text-base text-gray-500">
-                <div className="mt-6">
-                  <dt className="sr-only">Phone number</dt>
-                  <dd className="flex">
-                    <svg className="flex-shrink-0 h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    <span className="ml-3">+31 (0)123 456 789</span>
-                  </dd>
-                </div>
-                <div className="mt-3">
-                  <dt className="sr-only">Email</dt>
-                  <dd className="flex">
-                    <svg className="flex-shrink-0 h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    <span className="ml-3">info@storageveendam.nl</span>
-                  </dd>
-                </div>
-                <div className="mt-3">
-                  <dt className="sr-only">Address</dt>
-                  <dd className="flex">
-                    <svg className="flex-shrink-0 h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <span className="ml-3">123 Storage Street, Veendam, Netherlands</span>
-                  </dd>
-                </div>
-              </dl>
-            </div>
-            <div>
-              <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">Send us a message</h2>
-              <form onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-                  <div className="mt-1">
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      autoComplete="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="py-3 px-4 block w-full shadow-sm focus:ring-teal-500 focus:border-teal-500 border-gray-300 rounded-md"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-                  <div className="mt-1">
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      autoComplete="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="py-3 px-4 block w-full shadow-sm focus:ring-teal-500 focus:border-teal-500 border-gray-300 rounded-md"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone</label>
-                  <div className="mt-1">
-                    <input
-                      type="tel"
-                      name="phone"
-                      id="phone"
-                      autoComplete="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="py-3 px-4 block w-full shadow-sm focus:ring-teal-500 focus:border-teal-500 border-gray-300 rounded-md"
-                    />
-                  </div>
-                </div>
-                <div className="sm:col-span-2">
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
-                  <div className="mt-1">
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      required
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="py-3 px-4 block w-full shadow-sm focus:ring-teal-500 focus:border-teal-500 border-gray-300 rounded-md"
-                    ></textarea>
-                  </div>
-                </div>
-                <div className="sm:col-span-2">
+          <div className="max-w-3xl mx-auto divide-y-2 divide-gray-200">
+            {faqs.map((faq, index) => (
+              <div key={index} className="pt-6 pb-8">
+                <dt className="text-lg">
+                  
                   <button
-                    type="submit"
-                    className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+                    onClick={() => setOpenQuestion(openQuestion === index ? null : index)}
+                    className="text-left w-full flex justify-between items-start text-gray-400"
                   >
-                    Send Message
+                    <span className="font-medium text-gray-900">{faq.question}</span>
+                    <span className="ml-6 h-7 flex items-center">
+                      <svg
+                        className={`${openQuestion === index ? '-rotate-180' : 'rotate-0'} h-6 w-6 transform`}
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
                   </button>
-                </div>
-              </form>
-            </div>
+                </dt>
+                <dd className={`mt-2 pr-12 ${openQuestion === index ? 'block' : 'hidden'}`}>
+                  <p className="text-base text-gray-500">{faq.answer}</p>
+                </dd>
+              </div>
+            ))}
           </div>
         </div>
       </main>
@@ -306,4 +240,4 @@ export default function ContactPage() {
       </footer>
     </div>
   )
-}
+}}
