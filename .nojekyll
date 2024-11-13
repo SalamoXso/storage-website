@@ -1,2 +1,0 @@
-- name: Create .nojekyll
-  run: touch ./out/.nojekyll
