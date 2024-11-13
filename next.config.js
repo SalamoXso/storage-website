@@ -6,6 +6,9 @@ const nextConfig = {
   images: {
     unoptimized: true, // Disable default image optimization
   },
+  
+ 
 };
+
 
 module.exports = nextConfig;
