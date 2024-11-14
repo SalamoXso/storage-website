@@ -65,7 +65,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-64 sm:h-72 md:h-96 lg:h-full">
               <Image
-                src="../image.jpeg"
+                src="/images.jpeg"
                 alt="Storage Veendam Facility"
                 layout="fill"
                 objectFit="cover"
