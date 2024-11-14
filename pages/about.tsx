@@ -1,5 +1,4 @@
-"use client"
-
+'use client'
 import "/src/app/styles/globals.css";
 import Image from "next/image"
 import Link from "next/link"
@@ -64,14 +63,15 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="relative h-64 sm:h-72 md:h-96 lg:h-full">
-              <Image
-                src="/images.jpeg"
-                alt="Storage Veendam Facility"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg shadow-lg"
-              />
-            </div>
+  <Image
+    src="/istockphoto-1255176983-612x612.jpg"
+    alt="Storage Veendam Facility"
+    layout="fill"
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+    objectFit="cover"
+    className="rounded-lg shadow-lg"
+  />
+</div>
           </div>
 
           <div className="mt-16">
