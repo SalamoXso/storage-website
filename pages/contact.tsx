@@ -27,39 +27,39 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
-            <div className="flex justify-start lg:w-0 lg:flex-1">
-              <Link href="/" className="flex items-center">
-                <span className="sr-only">Storage Veendam</span>
-                <svg className="h-8 w-auto sm:h-10 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
-                </svg>
-                <span className="ml-2 text-xl font-bold text-gray-900">Storage Veendam</span>
-              </Link>
-            </div>
-            <nav className="hidden md:flex space-x-10">
-              <Link href="/services" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Services
-              </Link>
-              <Link href="/pricing" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Pricing
-              </Link>
-              <Link href="/about" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                About
-              </Link>
-              <Link href="/contact" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Contact
-              </Link>
-            </nav>
-            <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-              <Link href="/contact" className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-teal-600 hover:bg-teal-700">
-                Get Started
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
+      <div className="flex justify-start lg:w-0 lg:flex-1">
+        <Link href="/" className="flex items-center">
+          <span className="sr-only">Storage Veendam</span>
+          <svg className="h-8 w-auto sm:h-10 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+          </svg>
+          <span className="ml-2 text-xl font-bold text-gray-900">Storage Veendam</span>
+        </Link>
+      </div>
+      <nav className="hidden md:flex space-x-10">
+        <Link href="/services" className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center">
+          Services
+        </Link>
+        <Link href="/pricing" className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center">
+          Pricing
+        </Link>
+        <Link href="/about" className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center">
+          About
+        </Link>
+        <Link href="/contact" className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center">
+          Contact
+        </Link>
+      </nav>
+      <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+        <Link href="/contact" className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-teal-600 hover:bg-teal-700 hover:scale-110 hover:shadow-lg transition duration-300 ease-in-out">
+          Get Started
+        </Link>
+      </div>
+    </div>
+  </div>
+</header>
 
       <main className="flex-grow">
         <div className="bg-teal-700">
